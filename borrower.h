@@ -1,7 +1,4 @@
-/*
-本代码由沈睿曦完成
-第一次完成：1月1日
-*/
+
 
 #ifndef BORROWER_H
 #define BORROWER_H
