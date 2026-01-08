@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include "book.h"
 
-// Ìí¼ÓÍ¼Êé
+// æ·»åŠ å›¾ä¹¦
 void addBook(Book** head) 
 {
     Book* b = (Book*)malloc(sizeof(Book));
-    printf("ÇëÊäÈëÍ¼ÊéID: ");
+    printf("è¯·è¾“å…¥å›¾ä¹¦ID: ");
     scanf("%d", &b->bookId);
-    printf("ÇëÊäÈëÍ¼ÊéÃû³Æ: ");
+    printf("è¯·è¾“å…¥å›¾ä¹¦åç§°: ");
     scanf("%s", b->name);
-    printf("ÇëÊäÈë×÷Õß: ");
+    printf("è¯·è¾“å…¥ä½œè€…: ");
     scanf("%s", b->author);
-    printf("ÇëÊäÈëÊýÁ¿: ");
+    printf("è¯·è¾“å…¥æ•°é‡: ");
     scanf("%d", &b->quantity);
     b->next = NULL;
 
@@ -27,28 +27,25 @@ void addBook(Book** head)
     }
 }
 
-// ÏÔÊ¾ËùÓÐÍ¼Êé
+// æ˜¾ç¤ºæ‰€æœ‰å›¾ä¹¦
 void displayBooks(Book* head) 
 {
     if (head == NULL) {
-        printf("µ±Ç°ÏµÍ³ÄÚÃ»ÓÐÍ¼Êé\n");
+        printf("å½“å‰ç³»ç»Ÿå†…æ²¡æœ‰å›¾ä¹¦\n");
         return;
     }
     Book* p = head;
     while (p != NULL) {
-        printf("Í¼ÊéID: %d\n", p->bookId);
-        printf("Ãû³Æ: %s\n", p->name);
-        printf("×÷Õß: %s\n", p->author);
-        printf("ÊýÁ¿: %d\n", p->quantity);
+        printf("å›¾ä¹¦ID: %d\n", p->bookId);
+        printf("åç§°: %s\n", p->name);
+        printf("ä½œè€…: %s\n", p->author);
+        printf("æ•°é‡: %d\n", p->quantity);
         printf("------------------------\n");
         p = p->next;
     }
 }
-/*
-±¾²¿·Ö´úÂëÓÉÀîÐËÈðÍê³É
-µÚÒ»´ÎÍê³É£º1ÔÂ1ÈÕ
-*/
-// ËÑË÷Í¼Êé
+
+// æœç´¢å›¾ä¹¦
 Book* searchBook(Book* head, int id) {
     Book* p = head;
     while (p != NULL) {
@@ -60,10 +57,10 @@ Book* searchBook(Book* head, int id) {
     return NULL;
 }
 
-// É¾³ýÍ¼Êé
+// åˆ é™¤å›¾ä¹¦
 void deleteBook(Book** head, int id) {
     if (*head == NULL) {
-        printf("µ±Ç°»¹Ã»ÓÐÍ¼Êé±»¼ÓÈëÏµÍ³\n");
+        printf("å½“å‰è¿˜æ²¡æœ‰å›¾ä¹¦è¢«åŠ å…¥ç³»ç»Ÿ\n");
         return;
     }
     if ((*head)->bookId == id) {
@@ -82,9 +79,5 @@ void deleteBook(Book** head, int id) {
         }
         p = p->next;
     }
-    printf("Î´ÕÒµ½¸ÃÍ¼Êé\n");
+    printf("æœªæ‰¾åˆ°è¯¥å›¾ä¹¦\n");
 }
-/*
-±¾²¿·Ö´úÂëÓÉÀîÐËÈðÍê³É
-µÚ¶þ´ÎÍê³É£º1ÔÂ2ÈÕ
-*/
